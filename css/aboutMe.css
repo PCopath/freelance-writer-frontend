@@ -1,0 +1,500 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Roboto Slab", Roboto Slab;
+  font-size: 1.6rem;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+h1,
+h2 {
+  font-weight: 300;
+  line-height: 1.2;
+}
+p {
+  margin: 1rem 0;
+}
+img {
+  width: 100%;
+}
+.text-center {
+  text-align: center;
+}
+
+/* Navbar Genel Stil */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+  width: 100%; /* Tam genişlik */
+   /* Navbar genişliğini sınırla */
+  margin: 0 auto; /* Ortalamak için */
+  padding: 0 2rem; /* Sağdan ve soldan ekstra iç boşluk */
+  position: fixed; /* Sayfanın üstünde sabit */
+  top: 0;
+  left: 0;
+  height: 70px;
+  padding: 0 3rem; /* İç boşluk */
+  background-color: transparent; /* Varsayılan arka plan */
+  z-index: 1000; /* Diğer elementlerin üstünde */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar Scroll Olduğunda (Scrolled Sınıfı) */
+.navbar.scrolled {
+  background-color: #fff; /* Beyaz arka plan */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
+
+.navbar.scrolled .navlinks,
+.navbar.scrolled .social a {
+  color: #000000 !important; /* Turuncu yazı ve ikon renkleri */
+}
+
+/* Navbar İçindeki Linkler */
+.navbar ul {
+  display: flex;
+  align-items: center;
+  list-style: none; /* Liste işaretlerini kaldır */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .navlinks {
+  color: #fff; /* Varsayılan renk */
+  text-decoration: none;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  transition: color 0.3s ease;
+}
+
+.navbar .navlinks:hover {
+  border-bottom: 2px solid #f88c00; /* Hover efekti */
+}
+
+/* Sosyal Medya İkonları */
+.navbar .social {
+  display: flex;
+  gap: 15px; /* İkonlar arası boşluk */
+}
+
+.navbar .social a {
+  color: #fff; /* Varsayılan renk */
+  font-size: 1.6rem;
+  transition: color 0.3s ease;
+}
+
+.navbar .social a:hover {
+  color: #f88c00; /* Hover rengini turuncu yap */
+}
+
+/* Logo */
+.navbar .brand img {
+  height: 60px;
+  
+}
+
+/* Scroll Durumunda Logo ve Linkler */
+
+.navbar.scrolled .navlinks,
+.navbar.scrolled .social a {
+  color: #f88c00; /* Scroll olduğunda turuncu renk */
+  transition: color 0.3s ease;
+}
+
+
+/* Navbar Scroll Olduğunda Logo ve Linkler */
+.navbar.scrolled .brand img {
+  content: url("../img/logo.png"); /* Siyah logonun yolu */
+  transition: all 0.3s ease;
+}
+
+
+
+.main-header {
+  background-image: url("../img/pen.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 35vh;
+  position: relative; /* Bu önemli */
+}
+
+.main-header .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.main-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.76);
+  z-index: 1; /* Bu da önemli */
+}
+
+.main-header * {
+  z-index: 5;
+}
+.main-header .content h1 {
+  font-size: 5rem;
+  color: #fff;
+  font-weight: 550;
+}
+.main-header .content p {
+  font-size: 1.6rem;
+  width: 60rem;
+  margin: 2rem 0 3rem;
+  color: #fff;
+}
+/* Ana Konteyner */
+.skills-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* Sol Alan: Başlık, Açıklama ve Buton */
+.skills-content {
+  flex: 1;
+  margin-right: 40px;
+}
+
+.skills-title {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.skills-description {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.skills-btn {
+  background-color: #ff8000;
+  color: #fff;
+  border: none;
+  padding: 18px 50px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.skills-btn:hover {
+  background-color: #e56b00;
+}
+
+/* Sağ Alan: Yetenekler */
+.skills-bars {
+  flex: 2;
+}
+
+.skill {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.skill h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  background-color: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 10px;
+}
+
+.progress {
+  background: repeating-linear-gradient(
+    45deg,
+    #ff8000,
+    #ff8000 10px,
+    #ffd699 10px,
+    #ffd699 20px
+  );
+  height: 100%;
+  transition: width 0.5s ease-in-out;
+}
+
+.skill-percentage {
+  position: absolute;
+  right: 0;
+  top: -5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Responsive Düzen */
+@media (max-width: 768px) {
+  .skills-container {
+    flex-direction: column;
+  }
+
+  .skills-content {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+.story-section{
+  background-color: #f5f5f5;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
+}
+
+.story-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 80%;
+  margin: 50px auto;
+  overflow: hidden;
+}
+
+/* Resim Alanı */
+.image-container {
+  flex: 1;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* İçerik Alanı */
+.content-container {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #333;
+}
+
+.content-container h1 {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.content-container p {
+  font-size: 1.5rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Buton Stili */
+.btn {
+  background-color: #ff7a00;
+  color: #fff;
+  text-decoration: none;
+  padding: 18px 50px;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+  width: fit-content;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #e56b00;
+  cursor: pointer;
+}
+
+/* Mobil Cihazlar için Düzenleme */
+@media (max-width: 768px) {
+  .story-container {
+    flex-direction: column;
+  }
+
+  .content-container {
+    padding: 20px;
+  }
+}
+
+.stats-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 50px auto;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Sol Taraf: İstatistik Kutuları */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  flex: 2;
+  padding: 40px;
+}
+
+.stat-box {
+  background-color: #f5f5f5;
+  padding: 45px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box h2 {
+  font-size: 6rem;
+  color: #ff7a00;
+  margin-bottom: 10px;
+  font-weight: 400;
+
+}
+
+.stat-box p {
+  font-size: 2rem;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Sağ Taraf: Resim */
+.image-container {
+  flex: 1;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mobil Cihazlar için Düzenleme */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .image-container {
+    height: 300px;
+  }
+}
+
+/* Footer Ana Konteyner */
+.footer-container {
+  background-color: #111;
+  color: #fff;
+  padding: 20px 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  position: relative;
+}
+
+/* Sosyal Medya Linkleri */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.social-links a i {
+  margin-right: 8px;
+}
+
+.social-links a:hover {
+  color: #ff7a00;
+}
+
+/* Telif Hakkı */
+.copyright {
+  font-size: 12px;
+  color: #888;
+}
+
+.copyright a.designer {
+  color: #ff7a00;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.copyright a.designer:hover {
+  color: #e56b00;
+}
+
+/* Yukarı Çık Butonu */
+.scroll-top {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.scroll-top a {
+  display: inline-block;
+  background-color: #ff7a00;
+  color: #fff;
+  padding: 10px;
+  border-radius: 3px;
+  transition: background 0.3s;
+}
+
+.scroll-top a i {
+  font-size: 16px;
+}
+
+.scroll-top a:hover {
+  background-color: #e56b00;
+}

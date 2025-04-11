@@ -1,0 +1,406 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Roboto Slab", Roboto Slab;
+  font-size: 1.6rem;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+h1,
+h2 {
+  font-weight: 300;
+  line-height: 1.2;
+}
+p {
+  margin: 1rem 0;
+}
+img {
+  width: 100%;
+}
+.text-center {
+  text-align: center;
+}
+
+/* Navbar Genel Stil */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%; /* Tam genişlik */
+  /* Navbar genişliğini sınırla */
+  margin: 0 auto; /* Ortalamak için */
+  padding: 0 2rem; /* Sağdan ve soldan ekstra iç boşluk */
+  position: fixed; /* Sayfanın üstünde sabit */
+  top: 0;
+  left: 0;
+  height: 70px;
+  padding: 0 3rem; /* İç boşluk */
+  background-color: transparent; /* Varsayılan arka plan */
+  z-index: 1000; /* Diğer elementlerin üstünde */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar Scroll Olduğunda (Scrolled Sınıfı) */
+.navbar.scrolled {
+  background-color: #fff; /* Beyaz arka plan */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
+
+.navbar.scrolled .navlinks,
+.navbar.scrolled .social a {
+  color: #000000 !important; /* Turuncu yazı ve ikon renkleri */
+}
+
+/* Navbar İçindeki Linkler */
+.navbar ul {
+  display: flex;
+  align-items: center;
+  list-style: none; /* Liste işaretlerini kaldır */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .navlinks {
+  color: #fff; /* Varsayılan renk */
+  text-decoration: none;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  transition: color 0.3s ease;
+}
+
+.navbar .navlinks:hover {
+  border-bottom: 2px solid #f88c00; /* Hover efekti */
+}
+
+/* Sosyal Medya İkonları */
+.navbar .social {
+  display: flex;
+  gap: 15px; /* İkonlar arası boşluk */
+}
+
+.navbar .social a {
+  color: #fff; /* Varsayılan renk */
+  font-size: 1.6rem;
+  transition: color 0.3s ease;
+}
+
+.navbar .social a:hover {
+  color: #f88c00; /* Hover rengini turuncu yap */
+}
+
+/* Logo */
+.navbar .brand img {
+  height: 60px;
+  width: auto;
+}
+
+/* Scroll Durumunda Logo ve Linkler */
+
+.navbar.scrolled .navlinks,
+.navbar.scrolled .social a {
+  color: #f88c00; /* Scroll olduğunda turuncu renk */
+  transition: color 0.3s ease;
+}
+
+/* Navbar Scroll Olduğunda Logo ve Linkler */
+.navbar.scrolled .brand img {
+  content: url("../img/logo.png"); /* Siyah logonun yolu */
+  transition: all 0.3s ease;
+}
+
+.main-header {
+  background-image: url("../img/pen.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 35vh;
+  position: relative; /* Bu önemli */
+}
+
+.main-header .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.main-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.76);
+  z-index: 1; /* Bu da önemli */
+}
+
+.main-header * {
+  z-index: 5;
+}
+.main-header .content h1 {
+  font-size: 5rem;
+  color: #fff;
+  font-weight: 550;
+}
+.main-header .content p {
+  font-size: 1.6rem;
+  width: 60rem;
+  margin: 2rem 0 3rem;
+  color: #fff;
+}
+.blog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Blog Kartları */
+.blog-cards3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card3 {
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  flex: 1;
+}
+
+.card3-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card3-content {
+  padding: 15px;
+}
+
+.category {
+  color: orange;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.card3 h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.date {
+  font-size: 12px;
+  color: gray;
+}
+
+.excerpt {
+  font-size: 14px;
+  color: #555;
+}
+
+.container {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.load-more {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+  font-size: 14px;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.load-more .icon {
+  font-size: 14px;
+}
+
+.load-more:hover {
+  border-color: #888;
+  color: #555;
+}
+
+/* lets Genel Stil */
+.lets {
+  background-image: url("../img/footer.jpg"); /* Arka plan resmi */
+  background-size: cover; /* Resmi tam kapla */
+  background-position: center; /* Resmi ortala */
+  background-repeat: no-repeat; /* Tekrar etmesin */
+  position: relative;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  height: 332px;
+}
+
+/* Şeffaf Katman */
+.lets::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Esnek Düzen */
+.lets .content {
+  display: flex; /* Flex düzen aktif */
+  justify-content: space-between; /* Elemanları dağıt */
+  align-items: center; /* Dikeyde ortala */
+  position: relative;
+  z-index: 2; /* Üst katmana yerleştir */
+  max-width: 1200px;
+  margin: 0 auto; /* Ortala */
+}
+
+/* Footer Metin */
+.lets-text {
+  max-width: 60%; /* Metin genişliği */
+  text-align: left; /* Metni sola yasla */
+}
+
+.lets-text h2 {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.lets-text p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: white;
+}
+
+/* Buton */
+.contact-btn {
+  background-color: orange;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  height: 60px;
+  width: 180px;
+}
+
+.contact-btn:hover {
+  background-color: #ff8800;
+}
+
+/* Footer Ana Konteyner */
+
+/* Footer Ana Konteyner */
+.footer-container {
+  background-color: #111; /* Arkaplan rengi */
+  color: #fff; /* Yazı rengi */
+  padding: 20px 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  width: 100%; /* Tam genişlik */
+  position: relative;
+}
+
+/* Sosyal Medya Linkleri */
+.social-links {
+  display: flex;
+  justify-content: center; /* Ortaya hizala */
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #ff7a00;
+}
+
+/* Telif Hakkı */
+.copyright {
+  font-size: 12px;
+  color: #888;
+  margin-top: 10px;
+}
+
+.copyright a.designer {
+  color: #ff7a00;
+  text-decoration: none;
+}
+
+.copyright a.designer:hover {
+  color: #e56b00;
+}
+
+/* Yukarı Çık Butonu */
+.scroll-top {
+  position: absolute; /* Footer içerisindeki belirli bir noktaya yerleştir */
+  bottom: 20px; /* Footer'ın altından 20px yukarıda */
+  right: 20px; /* Footer'ın sağından 20px içeride */
+}
+
+.scroll-top a {
+  display: inline-block;
+  background-color: #ff8800; /* Turuncu arkaplan */
+  color: #fff; /* Beyaz ikon rengi */
+  padding: 10px;
+  border-radius: 5px; /* Köşeleri yumuşat */
+  text-align: center;
+  font-size: 20px; /* İkon büyüklüğü */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-top a i {
+  display: block; /* İkonu dikey ortala */
+}
+
+.scroll-top a:hover {
+  background-color: #e56b00; /* Hover durumunda koyu turuncu */
+  transform: translateY(-5px); /* Hover durumunda hafif yukarı kalkma efekti */
+}

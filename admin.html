@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Panel</title>
+  </head>
+  <body>
+    <h1>Admin Giriş</h1>
+
+    <form id="loginForm">
+      <input
+        type="text"
+        id="loginUsername"
+        placeholder="Kullanıcı Adı"
+        required
+      /><br /><br />
+      <input
+        type="password"
+        id="loginPassword"
+        placeholder="Şifre"
+        required
+      /><br /><br />
+      <button type="submit">Giriş Yap</button>
+    </form>
+
+    <hr />
+
+    <h1>Blog Ekle</h1>
+
+    <form id="blogForm">
+      <input
+        type="text"
+        id="title"
+        placeholder="Blog Başlığı"
+        required
+      /><br /><br />
+      <textarea id="content" placeholder="Blog İçeriği" required></textarea
+      ><br /><br />
+      <button type="submit">Blog Ekle</button>
+    </form>
+
+    <h2>Bloglar</h2>
+    <div id="blogList"></div>
+
+    <script src="js/admin.js"></script>
+  </body>
+</html>

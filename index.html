@@ -1,228 +1,377 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/utils.css">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      src="https://kit.fontawesome.com/62aded3898.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/utils.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
-</head>
-<body>
-   <header id="home" class="main-header">
-       <div class="navbar">
-           <h1 class="brand">
-               <i class="fas fa-hotel"></i>
-               <span>Deluxe</span>Hotel
-           </h1>
-           <nav>
-               <ul>
-                   <li><a href="#home">Home</a></li>
-                   <li><a href="#about">About</a></li>
-                   <li><a href="#rooms">Rooms</a></li>
-                   <li><a href="blogs.html">Blog</a></li>
-                   <li><a href="#contact">Contact</a></li>
-               </ul>
-            </nav>
-       </div>
-       <div class="content">
-           <h1>Welcome To Deluxe</h1>
-           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, dolore.</p>
-           <a href="#" class="btn btn-primary"><i class="fas fa-chevron-right"></i>Read More</a>
-           
-       </div>
+  </head>
+  <body>
+    <header id="home" class="main-header">
+      <div class="navbar">
+        <h1 class="brand">
+          <img src="img/logo-t.png" alt="" />
+        </h1>
+        <nav>
+          <ul>
+            <li>
+              <a class="navlinks" style="color: #fb8c00" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li><a class="navlinks" href="services.html">Services</a></li>
+            <li><a class="navlinks" href="aboutMe.html">About Me</a></li>
+            <li><a class="navlinks" href="workwithme.html">Work With Me</a></li>
+            <li><a class="navlinks" href="blog.html">Our Blog</a></li>
+            <div class="social">
+              <a href="#"><i class="fab fa-facebook fa-x"></i></a>
+              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube fa-x"></i></a>
+              <a href="#"><i class="fab fa-linkedin fa-x"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            </div>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-   </header>
-   <main>
-        <!-- services  -->
-        <section id="services" class="icons bg-light">
-            <div class="flex-items">
-                <div>
-                    <i class="fas fa-concierge-bell fa-3x"></i>
-                    <div>
-                        <h3>24/7 Front Desk</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, necessitatibus?</p>
-                    </div>
-                </div>
-                <div>
-                    <i class="fas fa-utensils fa-3x"></i>
-                    <div>
-                        <h3>Restaurant Bar</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, necessitatibus?</p>
-                    </div>
-                </div>
-                <div>
-                    <i class="fas fa-bus fa-3x"></i>
-                    <div>
-                        <h3>Transfer Services</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, necessitatibus?</p>
-                    </div>
-                </div>
-                <div>
-                    <i class="fas fa-spa fa-3x"></i>
-                    <div>
-                        <h3>Spa Suites</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, necessitatibus?</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- about -->
-        <section id="about" class=" about flex-columns ">
-            <div class="row">
-                <div class="column">
-                    <div class="column-1">
-                        <img src="img/about1.jpeg" alt="">
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="column-2 bg-secondary">
-                        <h2>Customer Service</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, molestiae.</p>
-                        <button class="btn btn-outline">Read More</button>
-                    </div>  
-                </div>
-            </div>
-        </section>
-        <!-- gallery -->
-        <section id="gallery" class="gallery flex-grid section-padding">
-            <header class="section-header">
-                <h2>Lorem, ipsum.</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, beatae!</p>
-            </header>
-            <div class="row">
-                <div class="column">
-                    <img src="img/1.jpeg" alt="">
-                    <img src="img/2.jpeg" alt="">
-                </div>
-                <div class="column">
-                    <img src="img/3.jpeg" alt="">
-                    <img src="img/4.jpeg" alt="">
-                </div>
-                <div class="column">
-                    <img src="img/1.jpeg" alt="">
-                    <img src="img/2.jpeg" alt="">
-                </div>
-                <div class="column">
-                    <img src="img/3.jpeg" alt="">
-                    <img src="img/4.jpeg" alt="">
-                </div>
-            </div>
-        </section>
-        <!-- about -->
-        <section class="about flex-columns flex-reverse">
-            <div class="row">
-                <div class="column">
-                    <div class="column-1">
-                        <img src="img/about2.jpeg" alt="">
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="column-2 bg-primary">
-                        <h2>Customer Service</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, molestiae.</p>
-                        <button class="btn btn-outline">Read More</button>
-                    </div>  
-                </div>
-            </div>
-        </section>
-        <!-- rooms -->
-        <section id="rooms" class="rooms section-padding">
-            <header class="section-header">
-                <h2>Lorem, ipsum.</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, doloribus?</p>
-            </header>
-            <div class="flex-items">
-                <div class="card">
-                    <img src="img/room1.jpeg" alt="">
-                    <div class="card-body bg-warning">
-                        <h2>Deluxee Room</h2>
-                        <p>Lorem, ipsum.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img/room2.jpeg" alt="">
-                    <div class="card-body bg-warning">
-                        <h2>Superior Room</h2>
-                        <p>Lorem, ipsum.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img/room3.jpeg" alt="">
-                    <div class="card-body bg-warning">
-                        <h2>Standart Room</h2>
-                        <p>Lorem, ipsum.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- teams -->
-        <section id="teams" class="teams section-padding bg-light">
-            <header class="section-header">
-                <h2>Lorem, ipsum.</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, doloribus?</p>
-            </header>
-            <div class="flex-items">
-                <div>
-                    <img src="img/p1.jpeg" alt="">
-                    <h2>Lorem, ipsum.</h2>
-                    <p>Manager</p>
-                </div>
-                <div>
-                    <img src="img/p2.jpeg" alt="">
-                    <h2>Lorem, ipsum.</h2>
-                    <p>Manager</p>
-                </div>
-                <div>
-                    <img src="img/p3.jpeg" alt="">
-                    <h2>Lorem, ipsum.</h2>
-                    <p>Manager</p>
-                </div>
-            </div>
-        </section>
-        <!-- Contact -->
-        <section id="contact" class="contact flex-columns">
-            <div class="row">
-                <div class="column">
-                    <div class="column-1">
-                        <img src="img/contact.jpeg" alt="">
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="column-2 bg-light">
-                        <h2>Contact Us</h2>
-                        <form action="" class="contact-form">
-                            <div class="form-control">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" placeholder="Enter your name">
-                            </div>
-                            <div class="form-control">
-                                <label for="name">Email</label>
-                                <input type="email" id="email" placeholder="Enter your email">
-                            </div>
-                            <div class="form-control">
-                                <label for="name">Phone</label>
-                                <input type="text" id="phone" placeholder="Enter your phone">
-                            </div>
-                            <button type="submit" class="btn btn-primary">
-                                Send
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-   </main>
-   <footer class="footer bg-light">
-       <div class="social">
-           <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-           <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-           <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
-           <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
-       </div>
-       <p>Copyright &copy 2025 - Hotel Site</p>
+    <section>
+      <div class="grid-container">
+        <div class="card">
+          <i class="fa-solid fa-magic"></i>
+          <p>Turn Words<br />Into Magic</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-pen"></i>
+          <p>
+            Freelance <br />
+            Writer
+          </p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-book"></i>
+          <p>
+            Novel Book <br />
+            Author
+          </p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-user"></i>
+          <p>
+            Marketing <br />
+            Background
+          </p>
+        </div>
+      </div>
+    </section>
 
-   </footer>
-</body>
+    <section class="about-me">
+      <div class="container2">
+        <!-- Sol kutu: About Me ve küçük resim -->
+        <div class="left2-box">
+          <div class="about-box">
+            <h2>About Me</h2>
+            <p>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo inventore veritatis et quasi architecto beatae vitae
+              dicta sunt explicabo, write pencil design.
+            </p>
+          </div>
+          <div class="image-small">
+            <img src="img/abc.jpg" alt="Thinking Man" />
+          </div>
+        </div>
+
+        <div class="image-large">
+          <img src="img/thinking_man.jpg" alt="Writing Person" />
+        </div>
+      </div>
+    </section>
+
+    <section class="dedicated-writer">
+      <div class="section-header">
+        <h2>Dedicated Writer</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+          tellus, luctus <br />
+          nec ullamcorper mattis, pulvinar dapibus leo, viva la vida penci.
+        </p>
+      </div>
+      <div class="flex-items">
+        <div class="card2">
+          <img src="img/1.jpg" alt="" />
+          <div class="">
+            <h2>Hard Working</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo, viva
+              la vida penci.
+            </p>
+          </div>
+        </div>
+        <div class="card2">
+          <img src="img/2.jpg" alt="" />
+          <div class="">
+            <h2>Quality Essays</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo, viva
+              la vida penci.
+            </p>
+          </div>
+        </div>
+        <div class="card2">
+          <img src="img/3.jpg" alt="" />
+          <div class="">
+            <h2>Remote Working</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo, viva
+              la vida penci.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-work">
+      <div>
+        <div class="container3">
+          <div>
+            <h2>About My Work</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+              tellus, luctus <br />
+              nec ullamcorper mattis, pulvinar dapibus leo, viva la vida penci.
+            </p>
+          </div>
+
+          <button class="work-button">Work With Me</button>
+        </div>
+        <div class="stats">
+          <div class="stat-item">
+            <h3>10+</h3>
+            <p>Years Of Experiences</p>
+          </div>
+          <div class="stat-item">
+            <h3>347+</h3>
+            <p>Published Articles</p>
+          </div>
+          <div class="stat-item">
+            <h3>25+</h3>
+            <p>Viral Stories</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="hero">
+      <div class="overlay">
+        <div class="content-wrapper">
+          <div class="left-box">
+            <img
+              src="img/11-oix8mab3tv1v9wcaggv3j74q6p9zvx1eqh46vsa0gw.jpg"
+              alt="Work"
+            />
+          </div>
+          <div class="right-box">
+            <h1>Why Work With Me</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo, viva
+              la vida penci.
+            </p>
+            <div class="feature">
+              <h3>
+                <i class="fa-solid fa-shield fa-xl" style="color: #f88c00"></i
+                >Professional Work Ethics
+              </h3>
+              <p>
+                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+                aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                voluptatem sequi.
+              </p>
+            </div>
+            <div class="feature">
+              <h3>
+                <i class="fa-solid fa-scroll fa-xl" style="color: #f88c00"></i>
+                Writing That Define
+              </h3>
+              <p>
+                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+                aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                voluptatem sequi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="testimonials">
+      <div class="container4">
+        <h2>What Clients Say</h2>
+        <p class="subtitle">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+          tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo, viva la
+          vida penci.
+        </p>
+        <div class="testimonial-wrapper">
+          <div class="testimonial-box">
+            <p class="quote">
+              “Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo, viva la vida.”
+            </p>
+            <div class="stars">★★★★★</div>
+            <img src="img/adam.jpg" alt="Jame Goldon" class="client-img" />
+            <h3>Jame Goldon</h3>
+          </div>
+
+          <div class="testimonial-box">
+            <p class="quote">
+              “Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo, viva la vida.”
+            </p>
+            <div class="stars">★★★★★</div>
+            <img src="img/adam2.jpg" alt="Kelly Clarkson" class="client-img" />
+            <h3>Kelly Clarkson</h3>
+          </div>
+          <div class="testimonial-box">
+            <p class="quote">
+              “Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo, viva la vida.”
+            </p>
+            <div class="stars">★★★★★</div>
+            <img src="img/kadın.jpg" alt="John Travolta" class="client-img" />
+            <h3>John Travolta</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="blog-container">
+      <div class="header">
+        <img src="img/6.jpg" alt="Header Image" class="header-image" />
+        <div class="header-text">
+          <h1>Latest From Blog</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+          </p>
+        </div>
+      </div>
+
+      <div class="blog-cards3">
+        <div class="card3">
+          <img src="img/kitap3.jpg" alt="Blog 1" class="card3-image" />
+          <div class="card3-content">
+            <span class="category">New Authors</span>
+            <h3>
+              Novel, letter, memoir? Eimear McBride on Elizabeth Hardwick's
+              Sleepless Nights
+            </h3>
+            <p class="date">by Penci Design | July 1, 2019</p>
+            <p class="excerpt">
+              Lommodo ligula eget dolor. Aenean massa. Cum sociis natoque
+              penatibus...
+            </p>
+          </div>
+        </div>
+        <div class="card3">
+          <img src="img/kıtap1.jpg" alt="Blog 2" class="card3-image" />
+          <div class="card3-content">
+            <span class="category">What To Read</span>
+            <h3>
+              A day in the life: the best books set over 24-hours you need to
+              read now
+            </h3>
+            <p class="date">by Penci Design | July 1, 2019</p>
+            <p class="excerpt">
+              Lommodo ligula eget dolor. Aenean massa. Cum sociis natoque
+              penatibus...
+            </p>
+          </div>
+        </div>
+        <div class="card3">
+          <img src="img/kıtap2.jpg" alt="Blog 3" class="card3-image" />
+          <div class="card3-content">
+            <span class="category">Best Books</span>
+            <h3>
+              Flash Count Diary by Darcey Steinke sum up - a book you want to
+              argue with
+            </h3>
+            <p class="date">by Penci Design | July 1, 2019</p>
+            <p class="excerpt">
+              Lommodo ligula eget dolor. Aenean massa. Cum sociis natoque
+              penatibus...
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="lets">
+      <div class="content">
+        <div class="lets-text">
+          <h2>Let's Work Together</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo, viva la
+            vida penci.
+          </p>
+        </div>
+
+        <div class="footer-button">
+          <button class="contact-btn">Contact Me</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-container">
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i> FACEBOOK</a>
+        <a href="#"><i class="fab fa-twitter"></i> TWITTER</a>
+        <a href="#"><i class="fab fa-instagram"></i> INSTAGRAM</a>
+        <a href="#"><i class="fab fa-linkedin-in"></i> LINKEDIN</a>
+        <a href="#"><i class="fab fa-youtube"></i> YOUTUBE</a>
+      </div>
+
+      <div class="copyright">
+        <p>
+          @2024 - All Right Reserved. Designed and Developed by
+          <a href="#" class="designer">Mehmet Yasir Balcı</a>
+        </p>
+      </div>
+
+      <div class="scroll-top">
+        <a href="#top"><i class="fas fa-chevron-up"></i></a>
+      </div>
+    </footer>
+  </body>
+  <script>
+    document.addEventListener("scroll", function () {
+      const navbar = document.querySelector(".navbar");
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
 </html>
