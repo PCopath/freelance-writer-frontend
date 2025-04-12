@@ -37,6 +37,7 @@ blogForm.addEventListener("submit", async (e) => {
 
   const title = document.getElementById("title").value;
   const content = document.getElementById("content").value;
+  const image = document.getElementById("imageUrl").value;
   const token = localStorage.getItem("token");
 
   if (!token) {
@@ -56,7 +57,7 @@ blogForm.addEventListener("submit", async (e) => {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify({ title, content }),
+    body: JSON.stringify({ title, content, image }),
   });
 
   if (res.ok) {
@@ -82,9 +83,10 @@ async function getBlogs() {
     blogList.innerHTML += `
       <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px">
         <h3>${blog.title}</h3>
+        <img src="${blog.image}" alt="Blog" style="width:100%; max-height:200px; object-fit:cover; margin:10px 0;">
         <p>${blog.content}</p>
         <button onclick="deleteBlog('${blog._id}')">Sil</button>
-        <button onclick="editBlog('${blog._id}', \`${blog.title}\`, \`${blog.content}\`)">Güncelle</button>
+        <button onclick="editBlog('${blog._id}', \`${blog.title}\`, \`${blog.content}\`, \`${blog.image}\`)">Güncelle</button>
       </div>
     `;
   });
@@ -116,8 +118,9 @@ async function deleteBlog(id) {
 }
 
 // Blog Güncelle Modu
-function editBlog(id, title, content) {
+function editBlog(id, title, content, image) {
   document.getElementById("title").value = title;
   document.getElementById("content").value = content;
+  document.getElementById("imageUrl").value = image;
   updateBlogId = id;
 }
