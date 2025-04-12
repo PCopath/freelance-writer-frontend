@@ -24,8 +24,8 @@ fetch("https://freelance-writer-backend.onrender.com/api/blogs")
             <p class="date">${new Date(blog.createdAt).toLocaleDateString()}</p>
             <p class="excerpt">
               ${
-                blog.content.length > 200
-                  ? blog.content.slice(0, 200) + "..."
+                blog.content.length > 120
+                  ? blog.content.slice(0, 120) + "..."
                   : blog.content
               }
             </p>
