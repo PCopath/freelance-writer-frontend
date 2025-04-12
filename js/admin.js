@@ -4,7 +4,7 @@ const blogList = document.getElementById("blogList");
 
 let updateBlogId = null;
 
-// Login
+// Login İşlemi
 loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -37,7 +37,9 @@ blogForm.addEventListener("submit", async (e) => {
 
   const title = document.getElementById("title").value;
   const content = document.getElementById("content").value;
-  const image = document.getElementById("imageUrl").value;
+  const image =
+    document.getElementById("imageUrl").value ||
+    "https://picsum.photos/400/300"; // boşsa random foto
   const token = localStorage.getItem("token");
 
   if (!token) {
