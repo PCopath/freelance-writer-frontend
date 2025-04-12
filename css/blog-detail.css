@@ -1,0 +1,36 @@
+/* blog-detail.css */
+
+.blog-detail-container {
+  max-width: 1000px;
+  margin: 100px auto 50px auto;
+  padding: 20px;
+  background-color: var(--light);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.blog-detail-content h1 {
+  font-size: 4rem;
+  color: var(--dark);
+  margin-bottom: 15px;
+}
+
+.blog-date {
+  font-size: 1.4rem;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.blog-detail-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.blog-detail-content p {
+  font-size: 1.8rem;
+  color: #555;
+  line-height: 1.8;
+}

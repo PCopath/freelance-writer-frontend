@@ -1,14 +1,42 @@
+<!-- blog-detail.html -->
+
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog Detay</title>
+    <title>Blog Detail</title>
+    <link rel="stylesheet" href="css/utils.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/blog-detail.css" />
   </head>
+
   <body>
-    <h1 id="blog-title"></h1>
-    <p id="blog-content"></p>
-    <small id="blog-date"></small>
+    <header class="main-header">
+      <div class="navbar">
+        <h1 class="brand">
+          <img src="img/logo-t.png" alt="Logo" />
+        </h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="aboutMe.html">About Me</a></li>
+            <li><a href="workwithme.html">Work With Me</a></li>
+            <li><a href="blog.html">Our Blog</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="blog-detail-container">
+      <div class="blog-detail-content">
+        <h1 id="blog-title"></h1>
+        <p class="blog-date" id="blog-date"></p>
+        <img src="img/kitap3.jpg" alt="Blog Image" class="blog-detail-image" />
+        <p id="blog-content"></p>
+      </div>
+    </section>
 
     <script src="js/blog-detail.js"></script>
   </body>
