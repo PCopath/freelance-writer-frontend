@@ -22,7 +22,13 @@ fetch("https://freelance-writer-backend.onrender.com/api/blogs")
             <span class="category">Blog Yazısı</span>
             <h3><a href="blog-detail.html?id=${blog._id}">${blog.title}</a></h3>
             <p class="date">${new Date(blog.createdAt).toLocaleDateString()}</p>
-            <p class="excerpt">${blog.content}</p>
+            <p class="excerpt">
+              ${
+                blog.content.length > 200
+                  ? blog.content.slice(0, 200) + "..."
+                  : blog.content
+              }
+            </p>
           </div>
         </div>
       `;
