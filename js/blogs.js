@@ -15,9 +15,13 @@ fetch("https://freelance-writer-backend.onrender.com/api/blogs")
     }
 
     data.forEach((blog) => {
+      const imageUrl = blog.image
+        ? blog.image
+        : "https://i.ibb.co/0qRrP6X/book-cover.jpg"; // Default resim URL
+
       const blogItem = `
         <div class="card3">
-          <img src="${blog.image}" alt="Blog" class="card3-image" />
+          <img src="${imageUrl}" alt="Blog" class="card3-image" />
           <div class="card3-content">
             <span class="category">Blog Yazısı</span>
             <h3><a href="blog-detail.html?id=${blog._id}">${blog.title}</a></h3>
