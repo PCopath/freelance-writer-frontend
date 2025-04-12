@@ -34,3 +34,176 @@
   color: #555;
   line-height: 1.8;
 }
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Roboto Slab", Roboto Slab;
+  font-size: 1.6rem;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+h1,
+h2 {
+  font-weight: 300;
+  line-height: 1.2;
+}
+p {
+  margin: 1rem 0;
+}
+img {
+  width: 100%;
+}
+.text-center {
+  text-align: center;
+}
+
+/* Navbar Genel Stil */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%; /* Tam genişlik */
+  /* Navbar genişliğini sınırla */
+  margin: 0 auto; /* Ortalamak için */
+  padding: 0 2rem; /* Sağdan ve soldan ekstra iç boşluk */
+  position: fixed; /* Sayfanın üstünde sabit */
+  top: 0;
+  left: 0;
+  height: 70px;
+  padding: 0 3rem; /* İç boşluk */
+  background-color: transparent; /* Varsayılan arka plan */
+  z-index: 1000; /* Diğer elementlerin üstünde */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar Scroll Olduğunda (Scrolled Sınıfı) */
+.navbar.scrolled {
+  background-color: #fff; /* Beyaz arka plan */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
+
+.navbar.scrolled .navlinks,
+.navbar.scrolled .social a {
+  color: #000000 !important; /* Turuncu yazı ve ikon renkleri */
+}
+
+/* Navbar İçindeki Linkler */
+.navbar ul {
+  display: flex;
+  align-items: center;
+  list-style: none; /* Liste işaretlerini kaldır */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .navlinks {
+  color: #fff; /* Varsayılan renk */
+  text-decoration: none;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  transition: color 0.3s ease;
+}
+
+.navbar .navlinks:hover {
+  border-bottom: 2px solid #f88c00; /* Hover efekti */
+}
+
+/* Sosyal Medya İkonları */
+.navbar .social {
+  display: flex;
+  gap: 15px; /* İkonlar arası boşluk */
+}
+
+.navbar .social a {
+  color: #fff; /* Varsayılan renk */
+  font-size: 1.6rem;
+  transition: color 0.3s ease;
+}
+
+.navbar .social a:hover {
+  color: #f88c00; /* Hover rengini turuncu yap */
+}
+
+/* Logo */
+.navbar .brand img {
+  height: 60px;
+  width: auto;
+}
+
+/* Scroll Durumunda Logo ve Linkler */
+
+.navbar.scrolled .navlinks,
+.navbar.scrolled .social a {
+  color: #f88c00; /* Scroll olduğunda turuncu renk */
+  transition: color 0.3s ease;
+}
+
+/* Navbar Scroll Olduğunda Logo ve Linkler */
+.navbar.scrolled .brand img {
+  content: url("../img/logo.png"); /* Siyah logonun yolu */
+  transition: all 0.3s ease;
+}
+
+.main-header {
+  background-image: url("../img/pen.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 35vh;
+  position: relative; /* Bu önemli */
+}
+
+.main-header .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.main-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.76);
+  z-index: 1; /* Bu da önemli */
+}
+
+.main-header * {
+  z-index: 5;
+}
+.main-header .content h1 {
+  font-size: 5rem;
+  color: #fff;
+  font-weight: 550;
+}
+.main-header .content p {
+  font-size: 1.6rem;
+  width: 60rem;
+  margin: 2rem 0 3rem;
+  color: #fff;
+}
