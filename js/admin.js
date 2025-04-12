@@ -2,9 +2,9 @@ const loginForm = document.getElementById("loginForm");
 const blogForm = document.getElementById("blogForm");
 const blogList = document.getElementById("blogList");
 
-let updateBlogId = null; // Güncelleme yapılacak blog ID
+let updateBlogId = null;
 
-// Giriş Formu
+// Login
 loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -12,7 +12,7 @@ loginForm.addEventListener("submit", async (e) => {
   const password = document.getElementById("loginPassword").value;
 
   const res = await fetch(
-    "https://freelance-writer-backend.onrender.com/auth/login",
+    "https://freelance-writer-backend.onrender.com/api/auth/login",
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -25,7 +25,7 @@ loginForm.addEventListener("submit", async (e) => {
   if (res.ok) {
     alert("Giriş Başarılı");
     localStorage.setItem("token", data.token);
-    getBlogs(); // Girişten sonra blogları getir
+    getBlogs();
   } else {
     alert(data.message);
   }
@@ -44,49 +44,29 @@ blogForm.addEventListener("submit", async (e) => {
     return;
   }
 
-  if (updateBlogId) {
-    // Güncelleme
-    const res = await fetch(
-      `https://freelance-writer-backend.onrender.com/api/blogs/${updateBlogId}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ title, content }),
-      }
-    );
+  const url = updateBlogId
+    ? `https://freelance-writer-backend.onrender.com/api/blogs/${updateBlogId}`
+    : "https://freelance-writer-backend.onrender.com/api/blogs";
 
-    if (res.ok) {
-      alert("Blog Güncellendi!");
-      updateBlogId = null;
-    } else {
-      alert("Güncelleme hatası.");
-    }
+  const method = updateBlogId ? "PUT" : "POST";
+
+  const res = await fetch(url, {
+    method,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ title, content }),
+  });
+
+  if (res.ok) {
+    alert(updateBlogId ? "Blog Güncellendi!" : "Blog Eklendi!");
+    updateBlogId = null;
+    blogForm.reset();
+    getBlogs();
   } else {
-    // Yeni Blog Ekle
-    const res = await fetch(
-      "https://freelance-writer-backend.onrender.com/api/blogs",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ title, content }),
-      }
-    );
-
-    if (res.ok) {
-      alert("Blog Eklendi!");
-    } else {
-      alert("Blog eklenemedi.");
-    }
+    alert("İşlem başarısız.");
   }
-
-  blogForm.reset();
-  getBlogs();
 });
 
 // Blogları Getir
@@ -123,21 +103,19 @@ async function deleteBlog(id) {
     `https://freelance-writer-backend.onrender.com/api/blogs/${id}`,
     {
       method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+      headers: { Authorization: `Bearer ${token}` },
     }
   );
 
   if (res.ok) {
-    alert("Blog silindi.");
+    alert("Blog Silindi.");
     getBlogs();
   } else {
-    alert("Silme işlemi başarısız.");
+    alert("Silinemedi.");
   }
 }
 
-// Blog Güncellemek için formu doldur
+// Blog Güncelle Modu
 function editBlog(id, title, content) {
   document.getElementById("title").value = title;
   document.getElementById("content").value = content;

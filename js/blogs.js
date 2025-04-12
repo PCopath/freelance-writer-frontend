@@ -1,9 +1,18 @@
 fetch("https://freelance-writer-backend.onrender.com/api/blogs")
-  .then((response) => response.json())
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Bloglar getirilemedi");
+    }
+    return response.json();
+  })
   .then((data) => {
     const blogContainer = document.getElementById("blog-container");
 
-    blogContainer.innerHTML = ""; // temizle
+    blogContainer.innerHTML = ""; // Temizle
+
+    if (data.length === 0) {
+      blogContainer.innerHTML = "<p>Henüz blog eklenmemiş.</p>";
+    }
 
     data.forEach((blog) => {
       const blogItem = `
@@ -21,4 +30,8 @@ fetch("https://freelance-writer-backend.onrender.com/api/blogs")
       blogContainer.innerHTML += blogItem;
     });
   })
-  .catch((error) => console.log("Hata:", error));
+  .catch((error) => {
+    console.log("Hata:", error.message);
+    const blogContainer = document.getElementById("blog-container");
+    blogContainer.innerHTML = "<p>Bloglar yüklenirken bir hata oluştu.</p>";
+  });

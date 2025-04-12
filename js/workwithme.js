@@ -7,19 +7,26 @@ form.addEventListener("submit", async (e) => {
   const email = document.getElementById("email").value;
   const message = document.getElementById("message").value;
 
-  const res = await fetch(
-    "https://freelance-writer-backend.onrender.com/api/contact",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, message }),
-    }
-  );
+  try {
+    const res = await fetch(
+      "https://freelance-writer-backend.onrender.com/api/contact",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      }
+    );
 
-  if (res.ok) {
-    alert("Mesajınız gönderildi!");
-    form.reset();
-  } else {
-    alert("Hata oluştu.");
+    const data = await res.json();
+
+    if (res.ok) {
+      alert("Mesajınız gönderildi!");
+      form.reset();
+    } else {
+      alert(data.message || "Bir hata oluştu.");
+    }
+  } catch (error) {
+    console.log("Hata:", error);
+    alert("Bir hata oluştu. Lütfen tekrar deneyin.");
   }
 });
