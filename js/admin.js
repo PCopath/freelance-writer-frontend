@@ -1,3 +1,37 @@
+const loginForm = document.getElementById("loginForm");
+const blogForm = document.getElementById("blogForm");
+const blogList = document.getElementById("blogList");
+
+let updateBlogId = null;
+
+// Giriş İşlemi
+loginForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const username = document.getElementById("loginUsername").value;
+  const password = document.getElementById("loginPassword").value;
+
+  const res = await fetch(
+    "https://freelance-writer-backend.onrender.com/api/auth/login",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
+    }
+  );
+
+  const data = await res.json();
+
+  if (res.ok) {
+    alert("Giriş Başarılı");
+    localStorage.setItem("token", data.token);
+    getBlogs();
+  } else {
+    alert(data.message);
+  }
+});
+
+// Blog Ekle / Güncelle
 blogForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -6,7 +40,7 @@ blogForm.addEventListener("submit", async (e) => {
   const image =
     document.getElementById("imageUrl").value ||
     "https://picsum.photos/400/300";
-  const token = localStorage.getItem("token"); // 🔥 EKLENDİ
+  const token = localStorage.getItem("token"); // ✅ eksik olan buydu
 
   if (!token) {
     alert("Lütfen giriş yapınız.");
@@ -37,3 +71,58 @@ blogForm.addEventListener("submit", async (e) => {
     alert("İşlem başarısız.");
   }
 });
+
+// Blogları Listele
+async function getBlogs() {
+  const res = await fetch(
+    "https://freelance-writer-backend.onrender.com/api/blogs"
+  );
+  const data = await res.json();
+
+  blogList.innerHTML = "";
+
+  data.forEach((blog) => {
+    blogList.innerHTML += `
+      <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px">
+        <h3>${blog.title}</h3>
+        <img src="${blog.image}" alt="Blog" style="width:100%; max-height:200px; object-fit:cover; margin:10px 0;">
+        <p>${blog.content}</p>
+        <button onclick="deleteBlog('${blog._id}')">Sil</button>
+        <button onclick="editBlog('${blog._id}', \`${blog.title}\`, \`${blog.content}\`, \`${blog.image}\`)">Güncelle</button>
+      </div>
+    `;
+  });
+}
+
+// Blog Sil
+async function deleteBlog(id) {
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    alert("Önce giriş yapınız.");
+    return;
+  }
+
+  const res = await fetch(
+    `https://freelance-writer-backend.onrender.com/api/blogs/${id}`,
+    {
+      method: "DELETE",
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
+
+  if (res.ok) {
+    alert("Blog Silindi.");
+    getBlogs();
+  } else {
+    alert("Silinemedi.");
+  }
+}
+
+// Blog Güncellemek İçin Formu Doldur
+function editBlog(id, title, content, image) {
+  document.getElementById("title").value = title;
+  document.getElementById("content").value = content;
+  document.getElementById("imageUrl").value = image;
+  updateBlogId = id;
+}
